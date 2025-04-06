@@ -1,81 +1,100 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
-
 body {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  background: #fff4f4;
+  padding: 0;
+  font-family: 'Comic Sans MS', cursive;
+  background-color: #fceef1;
   background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-  color: #333;
+  background-repeat: repeat;
+  color: #d45c96;
+  text-align: center;
   overflow-x: hidden;
 }
 
-.container {
-  text-align: center;
-  padding: 2rem;
-}
-
 h1 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: #d66ba0;
+  font-size: 2em;
+  margin-top: 20px;
 }
 
-.image-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
+.message {
+  font-size: 1.5em;
+  margin-bottom: 20px;
 }
 
-.image-gallery img {
-  width: 300px;
-  border-radius: 1rem;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
+.slideshow {
+  position: relative;
+  width: 90%;
+  max-width: 300px;
+  margin: auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-.image-gallery img:hover {
-  transform: scale(1.03);
+.slide {
+  display: none;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
 }
 
-button {
-  margin-top: 2rem;
-  background: #ff7aa2;
-  color: white;
-  border: none;
-  padding: 1rem 2rem;
-  font-size: 1rem;
-  border-radius: 2rem;
+.slide.active {
+  display: block;
+}
+
+.flowers-container {
+  position: relative;
+  height: 200px;
+  margin-top: 30px;
+}
+
+.flower {
+  position: absolute;
+  width: 40px;
+  animation: flyIn 2s forwards;
+}
+
+@keyframes flyIn {
+  from {
+    transform: translateY(100vh) scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+#playButton {
+  margin-top: 20px;
+  background: #fff0f6;
+  border: 2px solid #d45c96;
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-size: 1em;
+  color: #d45c96;
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: background 0.3s ease;
+  transition: background 0.3s;
 }
 
-button:hover {
-  background: #ff5e8d;
+#playButton:hover {
+  background: #ffe2ec;
 }
 
-/* Floating Sparkles */
-.sparkles {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  pointer-events: none;
-  background: url('https://i.ibb.co/MV7Z0Pt/sparkles.gif') repeat;
-  opacity: 0.2;
-  z-index: 0;
+.sparkles::before {
+  content: "✨✨✨✨✨";
+  font-size: 2rem;
+  position: absolute;
+  top: 0;
+  left: 10%;
+  animation: sparkleMove 4s linear infinite;
+  color: #fbb1d4;
 }
 
-@media screen and (max-width: 600px) {
-  .image-gallery img {
-    width: 90%;
+@keyframes sparkleMove {
+  0% {
+    transform: translateY(0) rotate(0deg);
   }
-
-  h1 {
-    font-size: 1.5rem;
-  }
-
-  button {
-    font-size: 0.9rem;
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
   }
 }
