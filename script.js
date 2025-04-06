@@ -1,32 +1,24 @@
-const playBtn = document.getElementById('playBtn');
-const audio = document.getElementById('bgMusic');
+// Music setup
+const playButton = document.getElementById('playButton');
+const audio = document.getElementById('backgroundMusic');
 
-playBtn.addEventListener('click', () => {
-  audio.currentTime = 159; // Start at 2:39
+playButton.addEventListener('click', () => {
+  audio.currentTime = 159; // Start from 2:39
   audio.play();
-  playBtn.style.display = 'none';
 });
 
-// Slideshow
-let currentSlide = 0;
-const slides = document.querySelectorAll(".slide");
+// Slideshow logic
+const slideshow = document.getElementById('slideshow');
+const images = [
+  'images/img1.jpg',
+  'images/img2.jpg',
+  'images/img3.jpg',
+  'images/img4.jpg'
+];
+
+let index = 0;
 
 setInterval(() => {
-  slides[currentSlide].classList.remove("active");
-  currentSlide = (currentSlide + 1) % slides.length;
-  slides[currentSlide].classList.add("active");
-}, 3000);
-
-// Flowers
-const flowerContainer = document.getElementById('flower-container');
-const flowerEmojis = ['🌸','💐','🌷','🌺','🌼','🌻'];
-
-for (let i = 0; i < 25; i++) {
-  const flower = document.createElement('div');
-  flower.className = 'flower';
-  flower.innerText = flowerEmojis[Math.floor(Math.random() * flowerEmojis.length)];
-  flower.style.left = `${Math.random() * 90 + 5}%`;
-  flower.style.top = `${Math.random() * 60 + 20}px`;
-  flower.style.animationDelay = `${Math.random() * 3}s`;
-  flowerContainer.appendChild(flower);
-}
+  index = (index + 1) % images.length;
+  slideshow.src = images[index];
+}, 3000); // Change every 3 seconds
