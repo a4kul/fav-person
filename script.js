@@ -5,6 +5,9 @@ const audio = document.getElementById('backgroundMusic');
 playButton.addEventListener('click', () => {
   audio.currentTime = 159; // Start from 2:39
   audio.play();
+
+  // ✨ Add fade-out effect
+  playButton.classList.add('fade-out');
 });
 
 // Slideshow logic
