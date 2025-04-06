@@ -73,3 +73,32 @@ button:hover {
 .floating-flowers span:nth-child(4) { left: 50%; animation-delay: 1s; }
 .floating-flowers span:nth-child(5) { left: 70%; animation-delay: 3s; }
 .floating-flowers span:nth-child(6) { left: 90%; animation-delay: 5s; }
+
+/* ✅ Mobile responsiveness */
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 22px;
+    margin: 16px;
+  }
+
+  .slideshow-container {
+    width: 95%;
+    max-width: 95%;
+    height: auto;
+  }
+
+  #slideshow {
+    width: 100%;
+    height: auto;
+  }
+
+  button {
+    width: 80%;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .floating-flowers span {
+    font-size: 16px;
+  }
+}
