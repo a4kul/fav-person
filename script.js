@@ -17,7 +17,6 @@ const images = [
   'assets/img5.jpg'
 ];
 
-
 let index = 0;
 
 setInterval(() => {
