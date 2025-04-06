@@ -7,18 +7,23 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
+  <div class="paper-bg">
     <h1>To My Favourite Person</h1>
+    <p class="message">I’m sorry</p>
 
-    <div class="image-gallery">
-      <img src="assets/img1.jpg" />
-      <img src="assets/img2.jpg" />
+    <div class="slideshow">
+      <img src="assets/img1.jpg" class="slide active" />
+      <img src="assets/img2.jpg" class="slide" />
+      <img src="assets/img3.jpg" class="slide" />
+      <img src="assets/img4.jpg" class="slide" />
+      <img src="assets/img5.jpg" class="slide" />
     </div>
 
-    <button id="playBtn">Tap to Play Jhol 🎶</button>
-    <audio id="bgMusic" src="jhol.mp3"></audio>
-
+    <div class="flowers-container"></div>
     <div class="sparkles"></div>
+
+    <button id="playButton">💖 Tap to Play Music</button>
+    <audio id="song" src="jhol.mp3"></audio>
   </div>
 
   <script src="script.js"></script>
