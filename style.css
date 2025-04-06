@@ -3,7 +3,7 @@ body {
   background-color: #fceef3;
   color: #c44569;
   text-align: center;
-  background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+  background-image: url('https://cdn.pixabay.com/photo/2017/02/13/03/57/texture-2061709_1280.jpg');
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -11,11 +11,19 @@ body {
 
 h1 {
   margin-top: 20px;
-  font-size: 8vw; /* Larger responsive text */
+  font-size: 8vw;
+}
+
+/* Sorry text styling */
+.sorry-text {
+  font-size: 6vw;
+  font-weight: bold;
+  margin: 10px 0 30px;
+  color: #e63946;
 }
 
 .slideshow-container {
-  position: relative; /* Needed for absolute button */
+  position: relative;
   margin: 20px auto;
   width: 90vw;
   max-width: 400px;
@@ -72,7 +80,6 @@ h1 {
   }
 }
 
-/* Floating flower positions */
 .floating-flowers span:nth-child(1) { left: 5%; animation-delay: 0s; }
 .floating-flowers span:nth-child(2) { left: 15%; animation-delay: 2s; }
 .floating-flowers span:nth-child(3) { left: 30%; animation-delay: 4s; }
@@ -80,11 +87,15 @@ h1 {
 .floating-flowers span:nth-child(5) { left: 70%; animation-delay: 3s; }
 .floating-flowers span:nth-child(6) { left: 90%; animation-delay: 5s; }
 
-/* ✅ Mobile responsiveness */
 @media only screen and (max-width: 600px) {
   h1 {
     font-size: 28px;
     margin: 16px;
+  }
+
+  .sorry-text {
+    font-size: 22px;
+    margin: 10px 0 24px;
   }
 
   .slideshow-container {
