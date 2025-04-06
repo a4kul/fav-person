@@ -11,10 +11,11 @@ body {
 
 h1 {
   margin-top: 20px;
-  font-size: 6vw; /* Responsive heading */
+  font-size: 8vw; /* Larger responsive text */
 }
 
 .slideshow-container {
+  position: relative; /* Needed for absolute button */
   margin: 20px auto;
   width: 90vw;
   max-width: 400px;
@@ -31,20 +32,22 @@ h1 {
   border-radius: 20px;
 }
 
-button {
+.slideshow-container button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
   background-color: #fff0f5;
   border: 2px solid #ff69b4;
   border-radius: 20px;
-  padding: 10px 20px;
+  padding: 10px 15px;
   font-size: 4vw;
-  margin: 20px auto;
-  cursor: pointer;
   color: #ff1493;
+  cursor: pointer;
   transition: all 0.3s ease;
-  display: block;
+  z-index: 2;
 }
 
-button:hover {
+.slideshow-container button:hover {
   background-color: #ffe4ec;
 }
 
@@ -69,7 +72,7 @@ button:hover {
   }
 }
 
-/* Random positions */
+/* Floating flower positions */
 .floating-flowers span:nth-child(1) { left: 5%; animation-delay: 0s; }
 .floating-flowers span:nth-child(2) { left: 15%; animation-delay: 2s; }
 .floating-flowers span:nth-child(3) { left: 30%; animation-delay: 4s; }
@@ -80,7 +83,7 @@ button:hover {
 /* ✅ Mobile responsiveness */
 @media only screen and (max-width: 600px) {
   h1 {
-    font-size: 22px;
+    font-size: 28px;
     margin: 16px;
   }
 
@@ -95,10 +98,9 @@ button:hover {
     height: auto;
   }
 
-  button {
-    width: 80%;
+  .slideshow-container button {
     font-size: 14px;
-    padding: 10px;
+    padding: 8px 12px;
   }
 
   .floating-flowers span {
