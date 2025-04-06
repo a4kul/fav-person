@@ -1,33 +1,32 @@
-const playButton = document.getElementById("playButton");
-const song = document.getElementById("song");
+const playBtn = document.getElementById('playBtn');
+const audio = document.getElementById('bgMusic');
 
-playButton.addEventListener("click", () => {
-  song.play();
-  playButton.style.display = "none";
+playBtn.addEventListener('click', () => {
+  audio.currentTime = 159; // Start at 2:39
+  audio.play();
+  playBtn.style.display = 'none';
 });
 
-// Flower animation
-const flowerContainer = document.querySelector(".flowers-container");
-const flowerEmojis = ["🌸", "💐", "🌺", "🌷", "🌼"];
-
-for (let i = 0; i < 10; i++) {
-  const flower = document.createElement("div");
-  flower.classList.add("flower");
-  flower.textContent = flowerEmojis[i % flowerEmojis.length];
-  flower.style.left = `${Math.random() * 100}%`;
-  flower.style.top = `${Math.random() * 50 + 30}px`;
-  flowerContainer.appendChild(flower);
-}
-
 // Slideshow
-let slideIndex = 0;
+let currentSlide = 0;
 const slides = document.querySelectorAll(".slide");
 
-function showSlides() {
-  slides.forEach(slide => slide.classList.remove("active"));
-  slides[slideIndex].classList.add("active");
-  slideIndex = (slideIndex + 1) % slides.length;
-  setTimeout(showSlides, 2500);
-}
+setInterval(() => {
+  slides[currentSlide].classList.remove("active");
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].classList.add("active");
+}, 3000);
 
-showSlides();
+// Flowers
+const flowerContainer = document.getElementById('flower-container');
+const flowerEmojis = ['🌸','💐','🌷','🌺','🌼','🌻'];
+
+for (let i = 0; i < 25; i++) {
+  const flower = document.createElement('div');
+  flower.className = 'flower';
+  flower.innerText = flowerEmojis[Math.floor(Math.random() * flowerEmojis.length)];
+  flower.style.left = `${Math.random() * 90 + 5}%`;
+  flower.style.top = `${Math.random() * 60 + 20}px`;
+  flower.style.animationDelay = `${Math.random() * 3}s`;
+  flowerContainer.appendChild(flower);
+}
