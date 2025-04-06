@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>To My Favourite Person</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="paper-bg">
-    <h1>To My Favourite Person</h1>
-    <p class="message">I’m sorry</p>
+  <h1>To My Favourite Person</h1>
+  <p>I'm sorry</p>
 
-    <div class="slideshow">
-      <img src="assets/img1.jpg" class="slide active" />
-      <img src="assets/img2.jpg" class="slide" />
-      <img src="assets/img3.jpg" class="slide" />
-      <img src="assets/img4.jpg" class="slide" />
-      <img src="assets/img5.jpg" class="slide" />
-    </div>
+  <div class="slideshow-container">
+    <img id="slideshow" src="images/img1.jpg" alt="Us" />
+  </div>
 
-    <div class="flowers-container"></div>
-    <div class="sparkles"></div>
+  <button id="playButton">💖 Tap to Play Music</button>
 
-    <button id="playButton">💖 Tap to Play Music</button>
-    <audio id="song" src="jhol.mp3"></audio>
+  <audio id="backgroundMusic" src="audio/jhol.mp3"></audio>
+
+  <!-- Floating flowers -->
+  <div class="floating-flowers">
+    <span>🌸</span>
+    <span>🌷</span>
+    <span>🌼</span>
+    <span>💐</span>
+    <span>🌹</span>
+    <span>🌺</span>
   </div>
 
   <script src="script.js"></script>
