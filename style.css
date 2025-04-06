@@ -1,100 +1,81 @@
 body {
   margin: 0;
-  padding: 0;
-  font-family: 'Comic Sans MS', cursive;
-  background-color: #fceef1;
-  background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-  background-repeat: repeat;
-  color: #d45c96;
-  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff0f5;
   overflow-x: hidden;
+  position: relative;
 }
 
-h1 {
-  font-size: 2em;
+.paper-bg {
+  background: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+  padding: 30px 20px;
+  text-align: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #d36c6c;
   margin-top: 20px;
 }
 
 .message {
-  font-size: 1.5em;
-  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #555;
+  margin: 10px 0 40px;
+}
+
+#playBtn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #ffc4d6;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+#playBtn:hover {
+  background-color: #ffb0c2;
 }
 
 .slideshow {
-  position: relative;
-  width: 90%;
-  max-width: 300px;
-  margin: auto;
+  max-width: 90%;
+  margin: 0 auto;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .slide {
-  display: none;
   width: 100%;
-  height: auto;
-  border-radius: 20px;
+  display: none;
 }
 
 .slide.active {
   display: block;
 }
 
-.flowers-container {
-  position: relative;
-  height: 200px;
-  margin-top: 30px;
-}
-
 .flower {
   position: absolute;
-  width: 40px;
-  animation: flyIn 2s forwards;
+  font-size: 2rem;
+  animation: floatUp 6s ease-in-out infinite;
+  pointer-events: none;
+  opacity: 0.8;
 }
 
-@keyframes flyIn {
-  from {
-    transform: translateY(100vh) scale(0.5);
-    opacity: 0;
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1) rotate(0deg);
+    opacity: 0.8;
   }
-  to {
-    transform: translateY(0) scale(1);
+  50% {
+    transform: translateY(-40px) scale(1.1) rotate(5deg);
     opacity: 1;
   }
-}
-
-#playButton {
-  margin-top: 20px;
-  background: #fff0f6;
-  border: 2px solid #d45c96;
-  padding: 10px 20px;
-  border-radius: 15px;
-  font-size: 1em;
-  color: #d45c96;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-#playButton:hover {
-  background: #ffe2ec;
-}
-
-.sparkles::before {
-  content: "✨✨✨✨✨";
-  font-size: 2rem;
-  position: absolute;
-  top: 0;
-  left: 10%;
-  animation: sparkleMove 4s linear infinite;
-  color: #fbb1d4;
-}
-
-@keyframes sparkleMove {
-  0% {
-    transform: translateY(0) rotate(0deg);
-  }
   100% {
-    transform: translateY(-100vh) rotate(360deg);
+    transform: translateY(-80px) scale(1) rotate(-5deg);
+    opacity: 0.8;
   }
 }
