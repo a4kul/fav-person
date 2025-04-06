@@ -10,11 +10,13 @@ playButton.addEventListener('click', () => {
 // Slideshow logic
 const slideshow = document.getElementById('slideshow');
 const images = [
-  'images/img1.jpg',
-  'images/img2.jpg',
-  'images/img3.jpg',
-  'images/img4.jpg'
+  'assets/img1.jpg',
+  'assets/img2.jpg',
+  'assets/img3.jpg',
+  'assets/img4.jpg',
+  'assets/img5.jpg'
 ];
+
 
 let index = 0;
 
